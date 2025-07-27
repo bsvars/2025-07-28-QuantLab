@@ -1,7 +1,5 @@
 set.seed(123)
 
-library(bsvarSIGNs)
-
 data <- readxl::read_excel("VARData.xlsx")
 data[, 3:7] <- 100 * log(data[, 3:7]) # log transformation
 
@@ -33,16 +31,15 @@ sign_irf <- matrix(NA, 4, 4)
 sign_irf[1, 1] <- sign_irf[4, 1] <- 1 # +ve impact on cash rate and exchange rate
 sign_irf[3, 1] <- -1 # -ve impact on consumer price index
 sign_irf <- array(sign_irf, c(4, 4, 4)) # last for 4 periods
+sign_irf[, , 1]
 
 # restrictions on policy reaction function
 sign_structural <- matrix(NA, 4, 4)
 sign_structural[1, ] <- c(1, -1, -1, 1)
-
-sign_irf[, , 1]
-
 sign_structural
 
 # specify the model
+library(bsvarSIGNs)
 spec <- specify_bsvarSIGN$new(
   domestic,
   p = 4,

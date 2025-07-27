@@ -90,8 +90,26 @@ $$ $$
 [bsvars.org](https://bsvars.org)
 :::
 
+- Australia is a small open economy
+  - foreign sector determines its macroeconomic outcomes
+  - domestic sector does not affect the foreigns sector
+- its macroeconomic outcomes are jointly determined in a dynamic system
+- its currency floats
+- most of its international exchange in underwritten in UD dollars
 
 
+## Australia and its monetary policy {style="color:#ff68b4;"}
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+- the Reserve Bank of Australia conducts monetary policy
+  - they set the cash rate
+  - they target inflation as per price stability mandate
+  - they target full employment as per dual mandate
+  - they coordinate the policy with central banks of other inflation-targeting countries
+  
 
 
 
@@ -128,6 +146,108 @@ $$ $$
 ::: footer
 [bsvars.org](https://bsvars.org)
 :::
+
+```{r}
+#| cache: true
+data <- readxl::read_excel("VARData.xlsx")
+data[, 3:7] <- 100 * log(data[, 3:7])
+
+domestic <- ts(
+  data[, 2:5],
+  start = c(1982, 1),
+  frequency = 4
+)
+plot.ts(domestic)
+```
+
+
+## <span style='color: #ff68b4;'>effects estimation using bsvarSIGNs</span> {background-color="#ededed"} 
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+```{r}
+#| cache: true
+foreign <- ts(
+  data[, 6:8],
+  start = c(1982, 1),
+  frequency = 4
+)
+plot(foreign)
+```
+
+
+
+## <span style='color: #ff68b4;'>effects estimation using bsvarSIGNs</span> {background-color="#ededed"} 
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+```{r}
+#| cache: true
+# restrictions on impulse response functions
+sign_irf <- matrix(NA, 4, 4)
+sign_irf[1, 1] <- sign_irf[4, 1] <- 1     # impact on cash rate and exchange rate
+sign_irf[3, 1] <- -1                      # impact on consumer price index
+sign_irf <- array(sign_irf, c(4, 4, 4))   # last for 4 periods
+sign_irf[, , 1]
+
+sign_structural <- matrix(NA, 4, 4)
+sign_structural[1, ] <- c(1, -1, -1, 1)
+sign_structural
+```
+
+
+
+## <span style='color: #ff68b4;'>effects estimation using bsvarSIGNs</span> {background-color="#ededed"} 
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+```{r}
+#| cache: true
+library(bsvarSIGNs)
+
+spec <- specify_bsvarSIGN$new(
+  domestic,
+  p = 4,
+  exogenous = foreign,
+  sign_irf = sign_irf,
+  sign_structural = sign_structural
+)
+```
+
+```{r}
+#| echo: false
+#| cache: true
+spec$prior$Ysoc <- matrix(NA, nrow(spec$prior$Ysoc), 0)
+spec$prior$Xsoc <- matrix(NA, nrow(spec$prior$Xsoc), 0)
+spec$prior$Ysur <- matrix(NA, nrow(spec$prior$Ysur), 0)
+spec$prior$Xsur <- matrix(NA, nrow(spec$prior$Xsur), 0)
+```
+
+```{r}
+#| cache: true
+post <- estimate(spec, S = 5000)
+```
+
+
+
+## <span style='color: #ff68b4;'>effects estimation using bsvarSIGNs</span> {background-color="#ededed"} 
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+```{r}
+#| cache: true
+irf <- compute_impulse_responses(post, horizon = 20)
+plot(irf, probability = 0.68)
+```
+
 
 
 

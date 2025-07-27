@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -361,6 +426,31 @@
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
+<ul>
+<li>Australia is a small open economy
+<ul>
+<li>foreign sector determines its macroeconomic outcomes</li>
+<li>domestic sector does not affect the foreigns sector</li>
+</ul></li>
+<li>its macroeconomic outcomes are jointly determined in a dynamic system</li>
+<li>its currency floats</li>
+<li>most of its international exchange in underwritten in UD dollars</li>
+</ul>
+</section>
+<section id="australia-and-its-monetary-policy-3" class="slide level2" style="color:#ff68b4;">
+<h2>Australia and its monetary policy</h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<ul>
+<li>the Reserve Bank of Australia conducts monetary policy
+<ul>
+<li>they set the cash rate</li>
+<li>they target inflation as per price stability mandate</li>
+<li>they target full employment as per dual mandate</li>
+<li>they coordinate the policy with central banks of other inflation-targeting countries</li>
+</ul></li>
+</ul>
 </section>
 <section id="structural-vector-autoregressions-1" class="slide level2" data-background-color="#ff68b4">
 <h2><span style="color: #ededed;">structural vector autoregressions</span></h2>
@@ -382,7 +472,105 @@
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-1_db765703994758cb33d1f411a0d34912">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"VARData.xlsx"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>data[, <span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>] <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fu">log</span>(data[, <span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>])</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>domestic <span class="ot">&lt;-</span> <span class="fu">ts</span>(</span>
+<span id="cb1-5"><a href="#cb1-5"></a>  data[, <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>],</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1982</span>, <span class="dv">1</span>),</span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="at">frequency =</span> <span class="dv">4</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">plot.ts</span>(domestic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<section id="effects-estimation-using-bsvarsigns-3" class="slide level2" data-background-color="#ededed">
+<h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-2_01670c9aae074d612f88be3e835425dd">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>foreign <span class="ot">&lt;-</span> <span class="fu">ts</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  data[, <span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>],</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1982</span>, <span class="dv">1</span>),</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="at">frequency =</span> <span class="dv">4</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">plot</span>(foreign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="effects-estimation-using-bsvarsigns-4" class="slide level2" data-background-color="#ededed">
+<h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-3_d6a6713bc548773e9333fd479b52ab3f">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># restrictions on impulse response functions</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>sign_irf <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">4</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>sign_irf[<span class="dv">1</span>, <span class="dv">1</span>] <span class="ot">&lt;-</span> sign_irf[<span class="dv">4</span>, <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">1</span>     <span class="co"># impact on cash rate and exchange rate</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>sign_irf[<span class="dv">3</span>, <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span>                      <span class="co"># impact on consumer price index</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>sign_irf <span class="ot">&lt;-</span> <span class="fu">array</span>(sign_irf, <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>))   <span class="co"># last for 4 periods</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>sign_irf[, , <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1   NA   NA   NA
+[2,]   NA   NA   NA   NA
+[3,]   -1   NA   NA   NA
+[4,]    1   NA   NA   NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>sign_structural <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">4</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>sign_structural[<span class="dv">1</span>, ] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>sign_structural</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1   -1   -1    1
+[2,]   NA   NA   NA   NA
+[3,]   NA   NA   NA   NA
+[4,]   NA   NA   NA   NA</code></pre>
+</div>
+</div>
 </section>
+<section id="effects-estimation-using-bsvarsigns-5" class="slide level2" data-background-color="#ededed">
+<h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-4_645d2747107eab6c7b666f432c65539c">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(bsvarSIGNs)</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>spec <span class="ot">&lt;-</span> specify_bsvarSIGN<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  domestic,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="at">p =</span> <span class="dv">4</span>,</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="at">exogenous =</span> foreign,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="at">sign_irf =</span> sign_irf,</span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="at">sign_structural =</span> sign_structural</span>
+<span id="cb7-9"><a href="#cb7-9"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-6_02414396f222048ba7d3c43b86d0f985">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>post <span class="ot">&lt;-</span> <span class="fu">estimate</span>(spec, <span class="at">S =</span> <span class="dv">5000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>**************************************************|
+ bsvarSIGNs: Bayesian Structural VAR with sign,   |
+             zero and narrative restrictions      |
+**************************************************|
+ Progress of simulation for 5000 independent draws
+ Press Esc to interrupt the computations
+**************************************************|</code></pre>
+</div>
+</div>
+</section>
+<section id="effects-estimation-using-bsvarsigns-6" class="slide level2" data-background-color="#ededed">
+<h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-7_7b672e7105b4946b2821d17d6a64c9a5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>irf <span class="ot">&lt;-</span> <span class="fu">compute_impulse_responses</span>(post, <span class="at">horizon =</span> <span class="dv">20</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">plot</span>(irf, <span class="at">probability =</span> <span class="fl">0.68</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section id="section-1" class="slide level2" data-background-color="#ededed">
 <h2></h2>
 <p><img data-src="social_ql.png" class="absolute" style="top: 10px; right: 10px; width: 1000px; "></p>
