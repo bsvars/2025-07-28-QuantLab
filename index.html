@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.361">
 
   <meta name="author" content="by Tomasz Woźniak">
-  <title>Bayesian Structural Vector Autoregressions</title>
+  <title>index</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -324,94 +324,68 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#ff69b4" class="quarto-title-block center">
-  <h1 class="title"><span style="color: #ffd700;">Bayesian Structural Vector Autoregressions</span></h1>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-<span style="color: #ffd700;">by Tomasz Woźniak</span> 
-</div>
-</div>
-</div>
-
-</section>
-<section id="section" class="slide level2" data-background-color="#ff69b4">
+<section id="section" class="slide level2" data-background-color="#ededed">
 <h2></h2>
-<p><span class="math display">\[ \]</span></p>
-<h3 style="color:#ffd700;" id="structural-vector-autoregressions">Structural Vector Autoregressions</h3>
-<h3 style="color:#ffd700;" id="identification-of-structural-vars">Identification of Structural VARs</h3>
-<h3 style="color:#ffd700;" id="dynamic-causal-effects">Dynamic Causal Effects</h3>
-<h3 style="color:#ffd700;" id="bayesian-estimation">Bayesian Estimation</h3>
-<h3 style="color:#ffd700;" id="monetary-policy-analysis-using-the-bsvars-package">Monetary Policy Analysis Using the <a href="https://cran.r-project.org/package=bsvars">bsvars</a> Package</h3>
+<p><img data-src="bsvars.org.png" class="absolute" style="top: 80px; right: 725px; width: 400px; "> <img data-src="bsvars.png" class="absolute" style="top: 80px; right: 325px; width: 400px; "> <img data-src="bsvarSIGNs.png" class="absolute" style="top: 80px; right: -75px; width: 400px; "></p>
 </section>
-<section id="section-1" class="slide level2" data-background-color="#ff69b4">
-<h2></h2>
-<p><img data-src="bsvars.png" class="absolute" style="top: 30px; right: 275px; width: 500px; "></p>
-</section>
-<section id="materials" class="slide level2" data-background-color="#ff69b4">
-<h2><span style="color: #ffd700;">Materials</span></h2>
-<p><span class="math display">\[ \]</span></p>
-<h3 style="color:#ffd700;" id="lecture-slides-as-a-website">Lecture Slides <a href="https://bsvars.github.io/2024-10-be24-bsvars">as a Website</a></h3>
-<h3 style="color:#ffd700;" id="r-script-for-your-own-australian-monetary-policy-analysis"><a href="https://github.com/bsvars/2024-10-be24-bsvars/blob/main/be24-bsvars.R">R script</a> for your own Australian monetary policy analysis</h3>
-<h3 style="color:#ffd700;" id="github-repo-to-reproduce-the-slides-and-results">GitHub <a href="https://github.com/bsvars/2024-10-be24-bsvars">repo</a> to reproduce the slides and results</h3>
-<h3 style="color:#ffd700;" id="tasks">Tasks</h3>
-</section>
-<section id="structural-vector-autoregressions-1" class="slide level2" data-background-color="#ff69b4">
-<h2><span style="color: #ffd700;">Structural Vector Autoregressions</span></h2>
-</section>
-<section id="structural-vector-autoregressions-2" class="slide level2">
-<h2>Structural Vector Autoregressions</h2>
-<ul>
-<li>go-to models for the analysis of policy effects</li>
-</ul>
-<div>
-<ul>
-<li class="fragment">facilitate the analysis of <strong>dynamic causal effects</strong> of a well-isolated cause</li>
-<li class="fragment">extensively used for: <em>monetary</em> and <em>fiscal</em> policy, <em>financial</em> markets, …</li>
-<li class="fragment">relatively simple to work with data and provide <em>empirical evidence on the propagation of shocks</em> through economies and markets</li>
-<li class="fragment">provide data-driven stylised facts to be incorporated in theoretical model</li>
-<li class="fragment">require identification of the cause of the dynamic effects</li>
-<li class="fragment">extendible: <em>featuring many variations in specification</em>
-<ul>
-<li class="fragment">non-normality</li>
-<li class="fragment">heteroskedasticity</li>
-<li class="fragment">time-varying parameters</li>
-<li class="fragment">Bayesian</li>
-</ul></li>
-<li class="fragment">Proposed by <a href="https://doi.org/10.2307/1912017">Sims (1980)</a></li>
-</ul>
-</div>
+<section id="modelling-the-effects-of-monetary-policy-in-australia" class="slide level2" style="color:#ff68b4;">
+<h2>modelling the effects of monetary policy in Australia</h2>
 <div class="footer">
-<p><a href="https://bsvars.github.io/2024-10-be24-bsvars">Bayesian Structural VARs</a></p>
+<p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
+<p><span class="math display">\[ \]</span></p>
+<h3 style="color:#ff68b4;" id="australia-and-its-monetary-policy">Australia and its monetary policy</h3>
+<h3 style="color:#ff68b4;" id="structural-vector-autoregressions">structural vector autoregressions</h3>
+<h3 style="color:#ff68b4;" id="effects-estimation-using-bsvarsigns">effects estimation using bsvarSIGNs</h3>
 </section>
-<section id="structural-vector-autoregressions-3" class="slide level2">
-<h2>Structural Vector Autoregressions</h2>
+<section id="resources" class="slide level2" data-background-color="#ededed">
+<h2><span style="color: #ff68b4;">resources</span></h2>
 <div class="footer">
-<p><a href="https://bsvars.github.io/2024-10-be24-bsvars">Bayesian Structural VARs</a></p>
+<p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
-<h3 id="the-model.">The model.</h3>
-<p><span class="math display">\[\begin{align}
-\text{VAR equation: }&amp;&amp; y_t &amp;= \mathbf{A}_1 y_{t-1} + \dots + \mathbf{A}_p y_{t-p} + \boldsymbol\mu_0 + \epsilon_t\\[1ex]
-\text{structural equation: }&amp;&amp; \mathbf{B}\epsilon_t &amp;= u_t\\[1ex]
-\text{structural shocks: }&amp;&amp; u_t |Y_{t-1} &amp;\sim N_N\left(\mathbf{0}_N,\mathbf{I}_N\right)
-\end{align}\]</span></p>
-<div class="fragment">
-<!-- -->
-<h3 id="notation.">Notation.</h3>
-<ul>
-<li><p><span class="math inline">\(\mathbf{B}\)</span> - <span class="math inline">\(N\times N\)</span> structural matrix of contemporaneous relationships</p></li>
-<li><p><span class="math inline">\(u_t\)</span> - <span class="math inline">\(N\)</span>-vector of structural shocks at time <span class="math inline">\(t\)</span></p>
-<p>Isolating these shocks allows us to <em>identify dynamic effects of uncorrelated shocks</em> on variables <span class="math inline">\(y_t\)</span></p></li>
-<li><p><span class="math inline">\(\epsilon_t\)</span> - <span class="math inline">\(N\)</span>-vector with error terms at time <span class="math inline">\(t\)</span></p></li>
-<li><p>the rest as in the lecture on <a href="https://bsvars.github.io/2024-10-be24-bsvarSIGNs/#/varp-model">Bayesian VARs</a></p></li>
-</ul>
+<p><span class="math display">\[ \]</span></p>
+<h3 style="color:#ff68b4;" id="slides-as-a-website">slides as a <a href="https://bsvars.org/2025-07-28-QuantLab/">website</a></h3>
+<h3 style="color:#ff68b4;" id="github-repo">GitHub <a href="https://github.com/bsvars/2025-07-28-QuantLab">repo</a></h3>
+<!-- ### [R scripts](https://github.com/bsvars/2024-12-uek/blob/master/bsvars_oz.R) for results reproduction {style="color:#ff68b4;"} -->
+<p><span class="math display">\[ \]</span></p>
+<h3 style="color:#ff68b4;" id="bsvars.org-official-website"><a href="https://bsvars.org/">bsvars.org</a> official website</h3>
+<h3 style="color:#ff68b4;" id="r-package-bsvars-on-cran">R package <a href="https://cran.r-project.org/package=bsvars">bsvars</a> on CRAN</h3>
+<h3 style="color:#ff68b4;" id="r-package-bsvarsigns-on-cran">R package <a href="https://cran.r-project.org/package=bsvarSIGNs">bsvarSIGNs</a> on CRAN</h3>
+</section>
+<section id="australia-and-its-monetary-policy-1" class="slide level2" data-background-color="#ff68b4">
+<h2><span style="color: #ededed;">Australia and its monetary policy</span></h2>
+</section>
+<section id="australia-and-its-monetary-policy-2" class="slide level2" style="color:#ff68b4;">
+<h2>Australia and its monetary policy</h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
 </section>
-<section id="section-2" class="slide level2" data-background-color="#ff69b4">
+<section id="structural-vector-autoregressions-1" class="slide level2" data-background-color="#ff68b4">
+<h2><span style="color: #ededed;">structural vector autoregressions</span></h2>
+</section>
+<section id="structural-vector-autoregressions-2" class="slide level2" style="color:#ff68b4;">
+<h2>structural vector autoregressions</h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+</section>
+<section id="effects-estimation-using-bsvarsigns-1" class="slide level2" data-background-color="#ff68b4">
+<h2><span style="color: #ededed;">effects estimation using bsvarSIGNs</span></h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+</section>
+<section id="effects-estimation-using-bsvarsigns-2" class="slide level2" data-background-color="#ededed">
+<h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+</section>
+<section id="section-1" class="slide level2" data-background-color="#ededed">
 <h2></h2>
-<p><img data-src="social.png" class="absolute" style="top: 30px; right: 200px; width: 800px; "></p>
+<p><img data-src="social_ql.png" class="absolute" style="top: 10px; right: 10px; width: 1000px; "></p>
 <div class="footer footer-default">
 
 </div>
@@ -630,6 +604,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
