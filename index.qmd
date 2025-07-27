@@ -1,0 +1,115 @@
+---
+title: "<span style='color: #ffd700;'>Bayesian Structural Vector Autoregressions</span>" 
+author: "<span style='color: #ffd700;'>by Tomasz Woźniak</span>"
+email: "tomasz.wozniak@unimelb.edu.au"
+title-slide-attributes:
+  data-background-color: "#ff69b4"
+number-sections: false
+format: 
+  revealjs: 
+    theme: [simple, theme.scss]
+    slide-number: c
+    transition: concave
+    smaller: true
+    multiplex: true
+execute: 
+  echo: true
+---
+
+##  {background-color="#ff69b4"}
+
+$$ $$
+
+### Structural Vector Autoregressions {style="color:#ffd700;"}
+
+### Identification of Structural VARs {style="color:#ffd700;"}
+
+### Dynamic Causal Effects {style="color:#ffd700;"}
+
+### Bayesian Estimation {style="color:#ffd700;"}
+
+### Monetary Policy Analysis Using the  [bsvars](https://cran.r-project.org/package=bsvars) Package {style="color:#ffd700;"}
+
+
+
+
+
+##  {background-color="#ff69b4"}
+
+![](bsvars.png){.absolute top=30 right=275 width="500"}
+
+
+
+## <span style="color: #ffd700;">Materials</span> {background-color="#ff69b4"} 
+
+$$ $$
+
+### Lecture Slides [as a Website](https://bsvars.github.io/2024-10-be24-bsvars) {style="color:#ffd700;"}
+
+### [R script](https://github.com/bsvars/2024-10-be24-bsvars/blob/main/be24-bsvars.R) for your own Australian monetary policy analysis{style="color:#ffd700;"}
+
+### GitHub [repo](https://github.com/bsvars/2024-10-be24-bsvars) to reproduce the slides and results{style="color:#ffd700;"}
+
+### Tasks{style="color:#ffd700;"}
+
+
+## <span style="color: #ffd700;">Structural Vector Autoregressions</span> {background-color="#ff69b4"}
+
+## Structural Vector Autoregressions
+
+- go-to models for the analysis of policy effects
+
+::: incremental
+- facilitate the analysis of **dynamic causal effects** of a well-isolated cause
+- extensively used for: *monetary* and *fiscal* policy, *financial* markets, ...
+- relatively simple to work with data and provide *empirical evidence on the propagation of shocks* through economies and markets
+- provide data-driven stylised facts to be incorporated in theoretical model
+- require identification of the cause of the dynamic effects
+- extendible: *featuring many variations in specification*
+    -   non-normality
+    -   heteroskedasticity
+    -   time-varying parameters
+    -   Bayesian
+-   Proposed by [Sims (1980)](https://doi.org/10.2307/1912017)
+:::
+
+::: footer
+[Bayesian Structural VARs](https://bsvars.github.io/2024-10-be24-bsvars)
+:::
+
+
+
+## Structural Vector Autoregressions
+
+::: footer
+[Bayesian Structural VARs](https://bsvars.github.io/2024-10-be24-bsvars)
+:::
+
+### The model.
+\begin{align}
+\text{VAR equation: }&& y_t &= \mathbf{A}_1 y_{t-1} + \dots + \mathbf{A}_p y_{t-p} + \boldsymbol\mu_0 + \epsilon_t\\[1ex]
+\text{structural equation: }&& \mathbf{B}\epsilon_t &= u_t\\[1ex]
+\text{structural shocks: }&& u_t |Y_{t-1} &\sim N_N\left(\mathbf{0}_N,\mathbf{I}_N\right)
+\end{align}
+
+::: {.fragment}
+### Notation.
+- $\mathbf{B}$ - $N\times N$ structural matrix of contemporaneous relationships
+- $u_t$ - $N$-vector of structural shocks at time $t$
+  
+  Isolating these shocks allows us to *identify dynamic effects of
+uncorrelated shocks* on variables $y_t$
+
+- $\epsilon_t$ - $N$-vector with error terms at time $t$
+- the rest as in the lecture on [Bayesian VARs](https://bsvars.github.io/2024-10-be24-bsvarSIGNs/#/varp-model)
+:::
+
+
+
+
+
+
+##  {background-color="#ff69b4"}
+
+![](social.png){.absolute top=30 right=200 width="800"}
+
