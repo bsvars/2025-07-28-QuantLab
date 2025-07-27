@@ -66,7 +66,7 @@ $$ $$
 
 ### GitHub [repo](https://github.com/bsvars/2025-07-28-QuantLab) {style="color:#ff68b4;"}
 
-<!-- ### [R scripts](https://github.com/bsvars/2024-12-uek/blob/master/bsvars_oz.R) for results reproduction {style="color:#ff68b4;"} -->
+### [R scripts](https://github.com/bsvars/2025-07-28-QuantLab/blob/master/monetary.R) for results reproduction {style="color:#ff68b4;"}
 
 
 $$ $$
