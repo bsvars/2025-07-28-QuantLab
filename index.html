@@ -430,11 +430,11 @@
 <li>Australia is a small open economy
 <ul>
 <li>foreign sector determines its macroeconomic outcomes</li>
-<li>domestic sector does not affect the foreigns sector</li>
+<li>domestic sector does not affect the foreign sector</li>
 </ul></li>
 <li>its macroeconomic outcomes are jointly determined in a dynamic system</li>
 <li>its currency floats</li>
-<li>most of its international exchange in underwritten in UD dollars</li>
+<li>most of its international exchange in underwritten in US dollars</li>
 </ul>
 </section>
 <section id="australia-and-its-monetary-policy-3" class="slide level2" style="color:#ff68b4;">
@@ -452,6 +452,26 @@
 </ul></li>
 </ul>
 </section>
+<section id="australia-and-its-monetary-policy-4" class="slide level2" style="color:#ff68b4;">
+<h2>Australia and its monetary policy</h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<h3 id="taylors-rule-taylor-1993">Taylor’s rule <a href="https://doi.org/10.1016/0167-2231(93)90009-L">(Taylor, 1993)</a></h3>
+<ul>
+<li><p>A simple rule to describe monetary policy of inflation-targetting countries <span class="math display">\[\begin{align}
+i_t = r_t + \pi_t + a_\pi(\pi_t-\pi^*) + a_y(y_t-y^*), \quad a_\pi, a_y &gt; 0
+\end{align}\]</span></p>
+<ul>
+<li><span class="math inline">\(i_t\)</span>: nominal policy interest rate</li>
+<li><span class="math inline">\(r_t\)</span>: natural interest rate</li>
+<li><span class="math inline">\(\pi_t\)</span>: inflation rate</li>
+<li><span class="math inline">\(\pi^*\)</span>: inflation target</li>
+<li><span class="math inline">\(y_t\)</span>: gross domestic product</li>
+<li><span class="math inline">\(y^*\)</span>: potential gross domestic product</li>
+</ul></li>
+</ul>
+</section>
 <section id="structural-vector-autoregressions-1" class="slide level2" data-background-color="#ff68b4">
 <h2><span style="color: #ededed;">structural vector autoregressions</span></h2>
 </section>
@@ -460,19 +480,62 @@
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
+<ul>
+<li><p>go-to models for the analysis of policy effects</p></li>
+<li><p>facilitate the analysis of <strong>dynamic causal effects</strong> of a well-isolated cause</p></li>
+<li><p>relatively simple to work with data and provide <em>empirical evidence on the propagation of shocks</em> through economies and markets</p></li>
+<li><p>provide data-driven stylised facts to be incorporated in theoretical models</p></li>
+<li><p>extensively used for: <em>monetary</em> and <em>fiscal</em> policy, <em>financial</em> markets, …</p></li>
+<li><p>extendible: <em>featuring many variations in specification</em></p>
+<ul>
+<li>non-normality</li>
+<li>non-linearity</li>
+<li>hierarchical modelling</li>
+</ul></li>
+<li><p>Proposed by <a href="https://doi.org/10.2307/1912017">Sims (1980)</a></p></li>
+</ul>
 </section>
-<section id="effects-estimation-using-bsvarsigns-1" class="slide level2" data-background-color="#ff68b4">
-<h2><span style="color: #ededed;">effects estimation using bsvarSIGNs</span></h2>
+<section id="structural-vector-autoregressions-3" class="slide level2" style="color:#ff68b4;">
+<h2>structural vector autoregressions</h2>
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
+<h3 id="data-domestic-sector.">data: domestic sector.</h3>
+<ul>
+<li><span class="math inline">\(\text{CASH}_t\)</span> - target cash rate</li>
+<li><span class="math inline">\(\text{gdp}_t\)</span> - logarithm of gross domestic product</li>
+<li><span class="math inline">\(\text{cpi}_t\)</span> - logarithm of consumer price index</li>
+<li><span class="math inline">\(\text{TWI}_t\)</span> - trade-weighted index of the Australian dollar</li>
+</ul>
+<h3 id="data-foreign-sector.">data: foreign sector.</h3>
+<ul>
+<li><span class="math inline">\(\text{TOT}_t\)</span> - terms of trade</li>
+<li><span class="math inline">\(\text{gdp}_{US.t}\)</span> - logarithm of US gross domestic product</li>
+<li><span class="math inline">\(\text{FFR}_t\)</span> - Federal Funds Rate - US nominal interest rate</li>
+</ul>
 </section>
-<section id="effects-estimation-using-bsvarsigns-2" class="slide level2" data-background-color="#ededed">
-<h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
+<section id="structural-vector-autoregressions-4" class="slide level2" style="color:#ff68b4;">
+<h2>structural vector autoregressions</h2>
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-1_db765703994758cb33d1f411a0d34912">
+<h3 id="data.">data.</h3>
+<ul>
+<li>based on the system by <a href="https://doi.org/10.1111/1475-4932.12749">Read (2023)</a></li>
+<li>quarterly time series from 1982 to 2020</li>
+<li>rates are not transformed</li>
+<li>macroeconomic aggregates are in logarithms</li>
+<li>data are unit-root non-stationary</li>
+<li>time series exhibit long memory</li>
+<li>data source: RBA, ABS, FRED</li>
+</ul>
+</section>
+<section id="structural-vector-autoregressions-5" class="slide level2" data-background-color="#ededed">
+<h2><span style="color: #ff68b4;">structural vector autoregressions</span></h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-1_328adaa2ef024d1ece0b81049edee59d">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"VARData.xlsx"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a>data[, <span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>] <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fu">log</span>(data[, <span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>])</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -481,26 +544,124 @@
 <span id="cb1-6"><a href="#cb1-6"></a>  <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1982</span>, <span class="dv">1</span>),</span>
 <span id="cb1-7"><a href="#cb1-7"></a>  <span class="at">frequency =</span> <span class="dv">4</span></span>
 <span id="cb1-8"><a href="#cb1-8"></a>)</span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">plot.ts</span>(domestic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">plot.ts</span>(domestic, <span class="at">col =</span> <span class="st">"#ff68b4"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">bty =</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
-<section id="effects-estimation-using-bsvarsigns-3" class="slide level2" data-background-color="#ededed">
-<h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
+<section id="structural-vector-autoregressions-6" class="slide level2" data-background-color="#ededed">
+<h2><span style="color: #ff68b4;">structural vector autoregressions</span></h2>
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>
 </div>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-2_01670c9aae074d612f88be3e835425dd">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-2_d703d07885de9606c8cfecba1c2d352a">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>foreign <span class="ot">&lt;-</span> <span class="fu">ts</span>(</span>
 <span id="cb2-2"><a href="#cb2-2"></a>  data[, <span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>],</span>
 <span id="cb2-3"><a href="#cb2-3"></a>  <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1982</span>, <span class="dv">1</span>),</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  <span class="at">frequency =</span> <span class="dv">4</span></span>
 <span id="cb2-5"><a href="#cb2-5"></a>)</span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">plot</span>(foreign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">plot</span>(foreign, <span class="at">col =</span> <span class="st">"#ff68b4"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">bty =</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="effects-estimation-using-bsvarsigns-4" class="slide level2" data-background-color="#ededed">
+<section id="structural-vector-autoregressions-7" class="slide level2" style="color:#ff68b4;">
+<h2>structural vector autoregressions</h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<h3 id="the-model.">the model.</h3>
+<p><span class="math display">\[\begin{align}
+\text{dynamic equation: }&amp;&amp; y_t &amp;= \mathbf{A}_1 y_{t-1} + \dots + \mathbf{A}_p y_{t-4} + \mathbf{A}_d x_{t} + \epsilon_t\\[1ex]
+\text{structural equation: }&amp;&amp; \mathbf{B}\epsilon_t &amp;= u_t\\[1ex]
+\text{structural shocks: }&amp;&amp; u_t |Y_{t-1} &amp;\sim N_N\left(\mathbf{0}_N,\text{diag}\left(\boldsymbol\sigma^2\right)\right)
+\end{align}\]</span></p>
+<div class="fragment">
+<!-- -->
+<h3 id="notation.">notation.</h3>
+<ul>
+<li><span class="math inline">\(y_t\)</span> - <span class="math inline">\(N\)</span>-vector of variables at time <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(\mathbf{A}_i\)</span> and <span class="math inline">\(\mathbf{B}\)</span> - autoregressive and structural coefficients</li>
+<li><span class="math inline">\(\epsilon_t\)</span> and <span class="math inline">\(u_t\)</span> - error terms and structural shocks at time <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(\boldsymbol\sigma^2\)</span> - structural shock variances</li>
+</ul>
+</div>
+</section>
+<section id="structural-vector-autoregressions-8" class="slide level2" style="color:#ff68b4;">
+<h2>structural vector autoregressions</h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<h3 id="dynamic-equation.">dynamic equation.</h3>
+<p><span class="math display">\[\begin{align}
+\text{dynamic equation: }&amp;&amp; y_t &amp;= \mathbf{A}_1 y_{t-1} + \dots + \mathbf{A}_4 y_{t-4} + \mathbf{A}_d x_{t} + \epsilon_t\\[1ex]
+\text{domestic sector: }&amp;&amp; y_t &amp;= \begin{bmatrix}\text{CASH}_t &amp;\text{gdp}_t  &amp;\text{cpi}_t  &amp;\text{TWI}_t  \end{bmatrix}'\\[1ex]
+\text{foreign sector: }&amp;&amp; x_t &amp;= \begin{bmatrix}\text{TOT}_{t-i} &amp;\text{gdp}_{US.t-i}  &amp;\text{FFR}_{t-i}  \end{bmatrix}'
+\end{align}\]</span></p>
+<ul>
+<li>captures dynamic relationships between variables in domestic sector</li>
+<li>jointly models the dynamics system</li>
+<li>includes foreign sector’s impact on domestic sector</li>
+</ul>
+</section>
+<section id="structural-vector-autoregressions-9" class="slide level2" style="color:#ff68b4;">
+<h2>structural vector autoregressions</h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<h3 id="structural-equation.">structural equation.</h3>
+<p><span class="math display">\[
+    \begin{align*}
+        \begin{bmatrix}
+            B_{11} &amp; B_{12} &amp; B_{13} &amp; B_{14} \\
+            B_{21} &amp; B_{22} &amp; B_{23} &amp; B_{24} \\
+            B_{31} &amp; B_{32} &amp; B_{33} &amp; B_{34} \\
+            B_{41} &amp; B_{42} &amp; B_{43} &amp; B_{44} \\
+        \end{bmatrix}
+        \begin{bmatrix}
+            \text{CASH}_t \\
+            \text{GDP}_t  \\
+            \text{CPI}_t  \\
+            \text{TWI}_t  \\
+        \end{bmatrix}
+        = \dots+
+        \begin{bmatrix}
+            u_{t}^{MP} \\
+            u_{2,t}    \\
+            u_{3,t}    \\
+            u_{4,t}    \\
+        \end{bmatrix}
+    \end{align*}
+  \]</span></p>
+<ul>
+<li>captures contemporaneous relationships between variables</li>
+<li>imposes theoretical structure on the system</li>
+<li>identifies <span class="math inline">\(u_{t}^{MP}\)</span> as the monetary policy shock</li>
+<li>restrictions on parameters <span class="math inline">\(B\)</span> are essential to identify the monetary policy shock</li>
+</ul>
+</section>
+<section id="structural-vector-autoregressions-10" class="slide level2" style="color:#ff68b4;">
+<h2>structural vector autoregressions</h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+<h3 id="structural-shocks.">structural shocks.</h3>
+<p><span class="math display">\[\begin{align}
+\text{jointly normal: }&amp;&amp; u_t |Y_{t-1} &amp;\sim N_4\left(\mathbf{0}_4,\text{diag}\left(\boldsymbol\sigma^2\right)\right)\\[1ex]
+\text{structural shocks: }&amp;&amp; u_t&amp;=\begin{bmatrix}u_{t}^{MP} &amp; u_{2,t} &amp; u_{3,t} &amp; u_{4,t}\end{bmatrix}'
+\end{align}\]</span></p>
+<ul>
+<li>shocks are contemporaneously and temporarily independent</li>
+<li>shocks are jointly normal</li>
+<li>the monetary policy shock, <span class="math inline">\(u_{t}^{MP}\)</span>, is identified as independent source of fluctuations of the cash rate, <span class="math inline">\(\text{CASH}_t\)</span></li>
+<li>identification of the monetary policy shock is essential in estimating the <strong>dynamic causal effects</strong> of monetary policy on the economy</li>
+</ul>
+</section>
+<section id="effects-estimation-using-bsvarsigns-1" class="slide level2" data-background-color="#ff68b4">
+<h2><span style="color: #ededed;">effects estimation using bsvarSIGNs</span></h2>
+<div class="footer">
+<p><a href="https://bsvars.org">bsvars.org</a></p>
+</div>
+</section>
+<section id="effects-estimation-using-bsvarsigns-2" class="slide level2" data-background-color="#ededed">
 <h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>
@@ -531,7 +692,7 @@
 </div>
 </div>
 </section>
-<section id="effects-estimation-using-bsvarsigns-5" class="slide level2" data-background-color="#ededed">
+<section id="effects-estimation-using-bsvarsigns-3" class="slide level2" data-background-color="#ededed">
 <h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>
@@ -560,7 +721,7 @@
 </div>
 </div>
 </section>
-<section id="effects-estimation-using-bsvarsigns-6" class="slide level2" data-background-color="#ededed">
+<section id="effects-estimation-using-bsvarsigns-4" class="slide level2" data-background-color="#ededed">
 <h2><span style="color: #ff68b4;">effects estimation using bsvarSIGNs</span></h2>
 <div class="footer">
 <p><a href="https://bsvars.org">bsvars.org</a></p>

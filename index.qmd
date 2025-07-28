@@ -92,10 +92,10 @@ $$ $$
 
 - Australia is a small open economy
   - foreign sector determines its macroeconomic outcomes
-  - domestic sector does not affect the foreigns sector
+  - domestic sector does not affect the foreign sector
 - its macroeconomic outcomes are jointly determined in a dynamic system
 - its currency floats
-- most of its international exchange in underwritten in UD dollars
+- most of its international exchange in underwritten in US dollars
 
 
 ## Australia and its monetary policy {style="color:#ff68b4;"}
@@ -113,6 +113,32 @@ $$ $$
 
 
 
+## Australia and its monetary policy {style="color:#ff68b4;"}
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+### Taylor's rule [(Taylor, 1993)](https://doi.org/10.1016/0167-2231(93)90009-L)
+
+- A simple rule to describe monetary policy of inflation-targetting countries
+\begin{align}
+i_t = r_t + \pi_t + a_\pi(\pi_t-\pi^*) + a_y(y_t-y^*), \quad a_\pi, a_y > 0
+\end{align}
+
+  - $i_t$: nominal policy interest rate
+  - $r_t$: natural interest rate
+  - $\pi_t$: inflation rate
+  - $\pi^*$: inflation target
+  - $y_t$: gross domestic product
+  - $y^*$: potential gross domestic product
+
+
+
+
+
+
+
 ## <span style='color: #ededed;'>structural vector autoregressions</span> {background-color="#ff68b4"} 
 
 
@@ -123,25 +149,63 @@ $$ $$
 :::
 
 
+- go-to models for the analysis of policy effects
+
+- facilitate the analysis of **dynamic causal effects** of a well-isolated cause
+- relatively simple to work with data and provide *empirical evidence on the propagation of shocks* through economies and markets
+- provide data-driven stylised facts to be incorporated in theoretical models
+- extensively used for: *monetary* and *fiscal* policy, *financial* markets, ...
+- extendible: *featuring many variations in specification*
+    -   non-normality
+    -   non-linearity
+    -   hierarchical modelling
+-   Proposed by [Sims (1980)](https://doi.org/10.2307/1912017)
 
 
 
 
-
-
-
-
-
-## <span style='color: #ededed;'>effects estimation using bsvarSIGNs</span> {background-color="#ff68b4"} 
+## structural vector autoregressions  {style="color:#ff68b4;"}
 
 ::: footer
 [bsvars.org](https://bsvars.org)
 :::
 
+### data: domestic sector.
+
+- $\text{CASH}_t$ - target cash rate
+- $\text{gdp}_t$ - logarithm of gross domestic product
+- $\text{cpi}_t$ - logarithm of consumer price index
+- $\text{TWI}_t$ - trade-weighted index of the Australian dollar
+
+### data: foreign sector.
+
+- $\text{TOT}_t$ - terms of trade
+- $\text{gdp}_{US.t}$ - logarithm of US gross domestic product
+- $\text{FFR}_t$ - Federal Funds Rate - US nominal interest rate
 
 
 
-## <span style='color: #ff68b4;'>effects estimation using bsvarSIGNs</span> {background-color="#ededed"} 
+## structural vector autoregressions  {style="color:#ff68b4;"}
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+### data.
+
+- based on the system by [Read (2023)](https://doi.org/10.1111/1475-4932.12749)
+- quarterly time series from 1982 to 2020
+- rates are not transformed
+- macroeconomic aggregates are in logarithms
+- data are unit-root non-stationary
+- time series exhibit long memory
+- data source: RBA, ABS, FRED
+
+
+
+
+
+## <span style='color: #ff68b4;'>structural vector autoregressions</span> {background-color="#ededed"} 
 
 ::: footer
 [bsvars.org](https://bsvars.org)
@@ -157,11 +221,11 @@ domestic <- ts(
   start = c(1982, 1),
   frequency = 4
 )
-plot.ts(domestic)
+plot.ts(domestic, col = "#ff68b4", lwd = 2, bty = "l")
 ```
 
 
-## <span style='color: #ff68b4;'>effects estimation using bsvarSIGNs</span> {background-color="#ededed"} 
+## <span style='color: #ff68b4;'>structural vector autoregressions</span> {background-color="#ededed"} 
 
 ::: footer
 [bsvars.org](https://bsvars.org)
@@ -174,8 +238,127 @@ foreign <- ts(
   start = c(1982, 1),
   frequency = 4
 )
-plot(foreign)
+plot(foreign, col = "#ff68b4", lwd = 2, bty = "l")
 ```
+
+
+
+
+
+
+
+
+## structural vector autoregressions  {style="color:#ff68b4;"}
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+### the model.
+\begin{align}
+\text{dynamic equation: }&& y_t &= \mathbf{A}_1 y_{t-1} + \dots + \mathbf{A}_p y_{t-4} + \mathbf{A}_d x_{t} + \epsilon_t\\[1ex] 
+\text{structural equation: }&& \mathbf{B}\epsilon_t &= u_t\\[1ex]
+\text{structural shocks: }&& u_t |Y_{t-1} &\sim N_N\left(\mathbf{0}_N,\text{diag}\left(\boldsymbol\sigma^2\right)\right)
+\end{align}
+
+::: {.fragment}
+### notation.
+- $y_t$ - $N$-vector of variables at time $t$
+- $\mathbf{A}_i$ and $\mathbf{B}$ - autoregressive and structural coefficients
+- $\epsilon_t$ and $u_t$ - error terms and structural shocks at time $t$
+- $\boldsymbol\sigma^2$ - structural shock variances
+:::
+
+
+
+
+
+## structural vector autoregressions  {style="color:#ff68b4;"}
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+### dynamic equation.
+
+\begin{align}
+\text{dynamic equation: }&& y_t &= \mathbf{A}_1 y_{t-1} + \dots + \mathbf{A}_4 y_{t-4} + \mathbf{A}_d x_{t} + \epsilon_t\\[1ex] 
+\text{domestic sector: }&& y_t &= \begin{bmatrix}\text{CASH}_t &\text{gdp}_t  &\text{cpi}_t  &\text{TWI}_t  \end{bmatrix}'\\[1ex] 
+\text{foreign sector: }&& x_t &= \begin{bmatrix}\text{TOT}_{t-i} &\text{gdp}_{US.t-i}  &\text{FFR}_{t-i}  \end{bmatrix}'
+\end{align}
+
+- captures dynamic relationships between variables in domestic sector
+- jointly models the dynamics system
+- includes foreign sector's impact on domestic sector
+
+
+
+
+## structural vector autoregressions  {style="color:#ff68b4;"}
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+### structural equation.
+
+  $$
+  	\begin{align*}
+  		\begin{bmatrix}
+  			B_{11} & B_{12} & B_{13} & B_{14} \\
+  			B_{21} & B_{22} & B_{23} & B_{24} \\
+  			B_{31} & B_{32} & B_{33} & B_{34} \\
+  			B_{41} & B_{42} & B_{43} & B_{44} \\
+  		\end{bmatrix}
+  		\begin{bmatrix}
+  			\text{CASH}_t \\
+  			\text{GDP}_t  \\
+  			\text{CPI}_t  \\
+  			\text{TWI}_t  \\
+  		\end{bmatrix}
+  		= \dots+
+  		\begin{bmatrix}
+  			u_{t}^{MP} \\
+  			u_{2,t}    \\
+  			u_{3,t}    \\
+  			u_{4,t}    \\
+  		\end{bmatrix}
+  	\end{align*}
+  $$
+
+- captures contemporaneous relationships between variables
+- imposes theoretical structure on the system
+- identifies $u_{t}^{MP}$ as the monetary policy shock
+- restrictions on parameters $B$ are essential to identify the monetary policy shock
+
+
+## structural vector autoregressions  {style="color:#ff68b4;"}
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+### structural shocks.
+\begin{align}
+\text{jointly normal: }&& u_t |Y_{t-1} &\sim N_4\left(\mathbf{0}_4,\text{diag}\left(\boldsymbol\sigma^2\right)\right)\\[1ex]
+\text{structural shocks: }&& u_t&=\begin{bmatrix}u_{t}^{MP} & u_{2,t} & u_{3,t} & u_{4,t}\end{bmatrix}'
+\end{align}
+
+- shocks are contemporaneously and temporarily independent
+- shocks are jointly normal
+- the monetary policy shock, $u_{t}^{MP}$, is identified as independent source of fluctuations of the cash rate, $\text{CASH}_t$
+- identification of the monetary policy shock is essential in estimating the **dynamic causal effects** of monetary policy on the economy
+
+
+
+
+## <span style='color: #ededed;'>effects estimation using bsvarSIGNs</span> {background-color="#ff68b4"} 
+
+::: footer
+[bsvars.org](https://bsvars.org)
+:::
+
+
 
 
 
