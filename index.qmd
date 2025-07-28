@@ -64,9 +64,9 @@ $$ $$
 
 ### slides as a [website](https://bsvars.org/2025-07-28-QuantLab/) {style="color:#ff68b4;"}
 
-### GitHub [repo](https://github.com/bsvars/2025-07-28-QuantLab) {style="color:#ff68b4;"}
+### GitHub [repo](https://github.com/bsvars/2025-07-28-QuantLab) with quarto presentation {style="color:#ff68b4;"}
 
-### [R scripts](https://github.com/bsvars/2025-07-28-QuantLab/blob/master/monetary.R) for results reproduction {style="color:#ff68b4;"}
+### [R scripts](https://github.com/bsvars/2025-07-28-QuantLab/blob/master/monetary.R) and [data](https://github.com/bsvars/2025-07-28-QuantLab/blob/master/VARData.xlsx) for results reproduction {style="color:#ff68b4;"}
 
 
 $$ $$
@@ -94,8 +94,8 @@ $$ $$
   - foreign sector determines its macroeconomic outcomes
   - domestic sector does not affect the foreign sector
 - its macroeconomic outcomes are jointly determined in a dynamic system
-- its currency floats
 - most of its international exchange in underwritten in US dollars
+- its currency floats
 
 
 ## Australia and its monetary policy {style="color:#ff68b4;"}
@@ -105,7 +105,7 @@ $$ $$
 :::
 
 - the Reserve Bank of Australia conducts monetary policy
-  - they set the cash rate
+  - they set the **cash rate target**
   - they target inflation as per price stability mandate
   - they target full employment as per dual mandate
   - they coordinate the policy with central banks of other inflation-targeting countries
@@ -261,13 +261,11 @@ plot(foreign, col = "#ff68b4", lwd = 2, bty = "l")
 \text{structural shocks: }&& u_t |Y_{t-1} &\sim N_N\left(\mathbf{0}_N,\text{diag}\left(\boldsymbol\sigma^2\right)\right)
 \end{align}
 
-::: {.fragment}
 ### notation.
 - $y_t$ - $N$-vector of variables at time $t$
 - $\mathbf{A}_i$ and $\mathbf{B}$ - autoregressive and structural coefficients
 - $\epsilon_t$ and $u_t$ - error terms and structural shocks at time $t$
 - $\boldsymbol\sigma^2$ - structural shock variances
-:::
 
 
 
@@ -288,7 +286,7 @@ plot(foreign, col = "#ff68b4", lwd = 2, bty = "l")
 \end{align}
 
 - captures dynamic relationships between variables in domestic sector
-- jointly models the dynamics system
+- jointly models the dynamic system
 - includes foreign sector's impact on domestic sector
 
 
@@ -357,6 +355,15 @@ plot(foreign, col = "#ff68b4", lwd = 2, bty = "l")
 ::: footer
 [bsvars.org](https://bsvars.org)
 :::
+
+
+
+
+
+
+
+
+
 
 
 

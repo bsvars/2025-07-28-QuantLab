@@ -411,8 +411,8 @@
 </div>
 <p><span class="math display">\[ \]</span></p>
 <h3 style="color:#ff68b4;" id="slides-as-a-website">slides as a <a href="https://bsvars.org/2025-07-28-QuantLab/">website</a></h3>
-<h3 style="color:#ff68b4;" id="github-repo">GitHub <a href="https://github.com/bsvars/2025-07-28-QuantLab">repo</a></h3>
-<h3 style="color:#ff68b4;" id="r-scripts-for-results-reproduction"><a href="https://github.com/bsvars/2025-07-28-QuantLab/blob/master/monetary.R">R scripts</a> for results reproduction</h3>
+<h3 style="color:#ff68b4;" id="github-repo-with-quarto-presentation">GitHub <a href="https://github.com/bsvars/2025-07-28-QuantLab">repo</a> with quarto presentation</h3>
+<h3 style="color:#ff68b4;" id="r-scripts-and-data-for-results-reproduction"><a href="https://github.com/bsvars/2025-07-28-QuantLab/blob/master/monetary.R">R scripts</a> and <a href="https://github.com/bsvars/2025-07-28-QuantLab/blob/master/VARData.xlsx">data</a> for results reproduction</h3>
 <p><span class="math display">\[ \]</span></p>
 <h3 style="color:#ff68b4;" id="bsvars.org-official-website"><a href="https://bsvars.org/">bsvars.org</a> official website</h3>
 <h3 style="color:#ff68b4;" id="r-package-bsvars-on-cran">R package <a href="https://cran.r-project.org/package=bsvars">bsvars</a> on CRAN</h3>
@@ -433,8 +433,8 @@
 <li>domestic sector does not affect the foreign sector</li>
 </ul></li>
 <li>its macroeconomic outcomes are jointly determined in a dynamic system</li>
-<li>its currency floats</li>
 <li>most of its international exchange in underwritten in US dollars</li>
+<li>its currency floats</li>
 </ul>
 </section>
 <section id="australia-and-its-monetary-policy-3" class="slide level2" style="color:#ff68b4;">
@@ -445,7 +445,7 @@
 <ul>
 <li>the Reserve Bank of Australia conducts monetary policy
 <ul>
-<li>they set the cash rate</li>
+<li>they set the <strong>cash rate target</strong></li>
 <li>they target inflation as per price stability mandate</li>
 <li>they target full employment as per dual mandate</li>
 <li>they coordinate the policy with central banks of other inflation-targeting countries</li>
@@ -574,8 +574,6 @@ i_t = r_t + \pi_t + a_\pi(\pi_t-\pi^*) + a_y(y_t-y^*), \quad a_\pi, a_y &gt; 0
 \text{structural equation: }&amp;&amp; \mathbf{B}\epsilon_t &amp;= u_t\\[1ex]
 \text{structural shocks: }&amp;&amp; u_t |Y_{t-1} &amp;\sim N_N\left(\mathbf{0}_N,\text{diag}\left(\boldsymbol\sigma^2\right)\right)
 \end{align}\]</span></p>
-<div class="fragment">
-<!-- -->
 <h3 id="notation.">notation.</h3>
 <ul>
 <li><span class="math inline">\(y_t\)</span> - <span class="math inline">\(N\)</span>-vector of variables at time <span class="math inline">\(t\)</span></li>
@@ -583,7 +581,6 @@ i_t = r_t + \pi_t + a_\pi(\pi_t-\pi^*) + a_y(y_t-y^*), \quad a_\pi, a_y &gt; 0
 <li><span class="math inline">\(\epsilon_t\)</span> and <span class="math inline">\(u_t\)</span> - error terms and structural shocks at time <span class="math inline">\(t\)</span></li>
 <li><span class="math inline">\(\boldsymbol\sigma^2\)</span> - structural shock variances</li>
 </ul>
-</div>
 </section>
 <section id="structural-vector-autoregressions-8" class="slide level2" style="color:#ff68b4;">
 <h2>structural vector autoregressions</h2>
@@ -598,7 +595,7 @@ i_t = r_t + \pi_t + a_\pi(\pi_t-\pi^*) + a_y(y_t-y^*), \quad a_\pi, a_y &gt; 0
 \end{align}\]</span></p>
 <ul>
 <li>captures dynamic relationships between variables in domestic sector</li>
-<li>jointly models the dynamics system</li>
+<li>jointly models the dynamic system</li>
 <li>includes foreign sector’s impact on domestic sector</li>
 </ul>
 </section>
