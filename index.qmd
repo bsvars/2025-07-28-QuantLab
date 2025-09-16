@@ -34,7 +34,7 @@ grad = grDevices::colorRampPalette(c(dar, pin))(5)
 
 
 
-## modelling the effects of monetary policy in Australia {style="color:#ff68b4;"}
+## Modelling the effects of monetary policy in Australia {style="color:#ff68b4;"}
 
 ::: footer
 [bsvars.org](https://bsvars.org)
@@ -54,7 +54,7 @@ $$ $$
 
 
 
-## <span style='color: #ff68b4;'>resources</span> {background-color="#ededed"} 
+## <span style='color: #ff68b4;'>Resources</span> {background-color="#ededed"} 
 
 ::: footer
 [bsvars.org](https://bsvars.org)
